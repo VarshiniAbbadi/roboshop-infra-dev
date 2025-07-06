@@ -7,8 +7,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "84s-remote-state-dev"
-    key    = "roboshop-dev-vpn"
+    bucket = "varshini-remote-state-dev"
+    key    = "var-roboshop-dev-vpn"
     region = "us-east-1"
     encrypt        = true
     use_lockfile = true
