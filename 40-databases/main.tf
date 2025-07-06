@@ -81,7 +81,7 @@ resource "aws_instance" "mysql" {
   instance_type = "t3.micro"
   vpc_security_group_ids = [local.mysql_sg_id]
   subnet_id = local.database_subnet_id
-  iam_instance_profile = "EC2RoleToFetchSSMParams"
+  iam_instance_profile = "EC2RoleToFetchSSMParameter"
   tags = merge(
     local.common_tags,
     {
@@ -156,7 +156,7 @@ resource "terraform_data" "rabbitmq" {
 
 resource "aws_route53_record" "mongodb" {
   zone_id = var.zone_id
-  name    = "mongodb-${var.environment}.${var.zone_name}" #mongodb-dev.daws84s.site
+  name    = "mongodb-${var.environment}.${var.zone_name}" #mongodb-dev.varshin.xyz
   type    = "A"
   ttl     = 1
   records = [aws_instance.mongodb.private_ip]

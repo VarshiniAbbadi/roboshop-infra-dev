@@ -1,5 +1,5 @@
 module "backend_alb" {
-  source = "terraform-aws-modules/alb/aws"
+  source = "terraform-aws-modules/alb/aws" #opensource module from git
   version = "9.16.0"
   internal = true
   name    = "${var.project}-${var.environment}-backend-alb" #roboshop-dev-backend-alb

@@ -1,5 +1,5 @@
 module "frontend_alb" {
-  source = "terraform-aws-modules/alb/aws"
+  source = "terraform-aws-modules/alb/aws"  #opensource module from git
   version = "9.16.0"
   internal = false
   name    = "${var.project}-${var.environment}-frontend-alb" #roboshop-dev-backend-alb
@@ -35,7 +35,7 @@ resource "aws_lb_listener" "frontend_alb" {
 
 resource "aws_route53_record" "frontend_alb" {
   zone_id = var.zone_id
-  name    = "*.${var.zone_name}" #.daws84s.site
+  name    = "*.${var.zone_name}" #.varshin.xyz
   type    = "A"
 
   alias {
