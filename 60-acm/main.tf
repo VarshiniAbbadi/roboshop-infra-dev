@@ -1,5 +1,5 @@
 resource "aws_acm_certificate" "varshin" {
-  domain_name       = "*.${var.zone_name}"
+  domain_name       = "${var.environment}.${var.zone_name}"
   validation_method = "DNS"
 
   tags = merge(
