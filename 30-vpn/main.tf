@@ -11,6 +11,7 @@ resource "aws_instance" "vpn" {
   #key_name = "daws-84s" # make sure this key exist in AWS
   key_name = aws_key_pair.openvpn.key_name
   user_data = file("openvpn.sh")
+  iam_instance_profile = "EC2RoleToFetchSSMParameter"
 
   tags = merge(
     local.common_tags,

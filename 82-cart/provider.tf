@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "varshini-remote-state-dev"
-    key    = "var-roboshop-dev-components"
+    key    = "var-roboshop-dev-cart"
     region = "us-east-1"
     encrypt        = true
     use_lockfile = true
